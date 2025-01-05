@@ -1,0 +1,25 @@
+@import './font.css';
+@import './home-page.css';
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'inter-font', serif;
+}
+
+:root {
+    --blue-primary-color: #1B56B4;
+    --blue-secondary-color: #25477E;
+    --blue-tertiary-color: #071D41;
+    --basic-white-color: #FFF;
+    --basic-dark-text-color: #333;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}

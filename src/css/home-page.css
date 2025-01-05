@@ -1,0 +1,86 @@
+#header-main-page {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem 5rem;
+}
+
+#header-logo {
+    width: 250px;
+}
+
+.header-align-flex {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+#header-navigation-list {
+    display: flex;
+    align-items: center;
+    gap: 3.5rem;
+}
+
+#header-navigation-list li a {
+    color: var(--blue-primary-color);
+    font-size: 0.80rem;
+}
+
+#header-navigation-list li {
+    transition: .5s;
+}
+
+#header-navigation-list li:hover {
+    transition: .5s;
+    transform: scale(1.02);
+}
+
+#header-divider {
+    background-color: var(--blue-primary-color);
+    height: 25px;
+    width: 1px;
+    border-radius: 0.5rem;
+}
+
+#choose-language {
+    display: flex;
+    align-items: center;
+    font-size: 0.65rem;
+    gap: 0.5rem;
+    color: var(--blue-primary-color);
+    border: 1px solid transparent;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+}
+
+#choose-language:hover {
+    border: 1px solid var(--blue-primary-color);
+    transition: .3s;
+    cursor: pointer;
+}
+
+.icons-language {
+    width: 25px;
+}
+
+.header-align-flex .icons-language:last-child {
+    width: 16px;
+}
+
+#access-information {
+    background-color: var(--blue-primary-color);
+    color: var(--basic-white-color);
+    padding: 0.8rem 1.2rem;
+    font-size: 0.80rem;
+    border-radius: 0.5rem;
+    transition: .5s;
+}
+
+#access-information:hover {
+    transition: .5s;
+    transform: scale(1.02);
+}
+
+//Header - hovers
+
+
