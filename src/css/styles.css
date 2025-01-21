@@ -1,5 +1,5 @@
 @import './font.css';
-@import './home-page.css';
+@import './../css/home-page/home-page.css';
 
 * {
     padding: 0;
@@ -12,6 +12,7 @@
     --blue-primary-color: #1B56B4;
     --blue-secondary-color: #25477E;
     --blue-tertiary-color: #071D41;
+    --blue-quaternary-color:#f8f8f8;
     --basic-white-color: #FFF;
     --basic-dark-text-color: #333;
 }
