@@ -5,3 +5,19 @@
     font-weight: normal;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'inter-font';
+    src: 
+    url('./../assets/fonts/woff-hinted/Inter-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'inter-font';
+    src: 
+    url('./../assets/fonts/woff-hinted/Inter-ExtraLight.woff2') format('woff2');
+    font-weight: 100;
+    font-style: normal;
+}
