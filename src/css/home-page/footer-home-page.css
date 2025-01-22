@@ -34,7 +34,7 @@
 #footer-div-info ul li a {
     color: var(--basic-white-color);
     font-weight: 200;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: 100;
     transition: 0.6s;
 }
@@ -65,6 +65,6 @@ hr {
 
 footer > p {
     color: var(--basic-white-color);
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     font-weight: 100;
 }

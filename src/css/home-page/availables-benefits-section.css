@@ -11,6 +11,9 @@
 #avaliables-benefits-section h2 {
     color: var(--blue-secondary-color);
     font-size: 1.1rem;
+    text-align: center;
+    width: fit-content;
+    padding: 0rem 0.8rem;
 }
 
 #avaliables-benefits-div {
@@ -45,3 +48,48 @@
     color: var(--blue-secondary-color);
     font-weight: 700;
 }
+
+/*Media queries - Responsivity*/
+@media screen and (max-width: 1080px) {
+    #avaliables-benefits-section h2 {
+        font-size: 1rem;
+    }
+
+    #avaliables-benefits-div {
+        gap: 2rem 4rem;
+        padding: 0rem 0.65rem;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    #avaliables-benefits-section h2 {
+        font-size: 0.9rem;
+    }
+
+    #avaliables-benefits-div {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 2rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #avaliables-benefits-div {
+        gap: 1rem;
+    }
+
+    .avaliables-benefits {
+        padding: 2.4rem 0.4rem;
+        gap: 1rem;
+    }
+
+    .avaliables-benefits img {
+        width: 3rem;
+    }
+
+    .avaliables-benefits p {
+        font-size: 0.85rem;
+    }
+}
+
