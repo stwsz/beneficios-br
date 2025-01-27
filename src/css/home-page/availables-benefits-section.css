@@ -47,6 +47,7 @@
 .avaliables-benefits p {
     color: var(--blue-secondary-color);
     font-weight: 700;
+    text-align: center;
 }
 
 /*Media queries - Responsivity*/

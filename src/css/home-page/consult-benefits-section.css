@@ -1,0 +1,68 @@
+/* Consult benefits - Styles*/
+#consult-benefits-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 0rem;
+    gap: 2.5rem;
+}
+
+#consult-benefits-section h2 {
+    color: var(--basic-dark-text-color);
+    font-size: 1.1rem;
+    text-align: center;
+    width: fit-content;
+    padding: 0rem 0.8rem;
+}
+
+#consult-benefits-section #consult-benefits-div {
+    background-color: var(--blue-quaternary-color);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem 4rem;
+    width: 50%;
+    border-radius: 0.5rem;
+}
+
+#consult-benefits-section #consult-benefits-div > p {
+    color: var(--blue-secondary-color);
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+#consult-benefits-section #consult-benefits-div #consult-benefits-div-inputs {
+    display: flex;
+    gap: 2.5rem;
+    
+}
+
+#consult-benefits-section #consult-benefits-div #consult-benefits-div-inputs div {
+    display: flex;
+    align-items: center;    
+    gap: 0.4rem;
+    font-size: 0.9rem;
+    color: var(--blue-secondary-color);
+    font-weight: 600;
+}
+
+#consult-benefits-section #consult-benefits-div #consult-benefits-div-inputs div input:hover, #consult-benefits-section #consult-benefits-div #consult-benefits-div-inputs div label:hover {
+    cursor: pointer;
+}
+
+#consult-benefits-section #consult-benefits-div > input {
+    border: 1px solid var(--blue-secondary-color);
+    border-radius: 0.2rem;
+    padding: 0.75rem 1rem;
+}
+
+#consult-benefits-section #consult-benefits-div a {
+    margin: 0 auto;
+    color: var(--basic-white-color);
+    background-color: var(--blue-secondary-color);
+    font-weight: 300;
+    font-size: 0.8rem;
+    padding: 0.8rem 6rem;
+    border-radius: 0.4rem;
+}
+
