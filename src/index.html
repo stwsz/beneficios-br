@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/styles.css">
-    <script src="./js/home-page.js" defer></script>
+    <script src="./js/home-page.js" type="module" defer></script>
     <title>BENEFICIOS.BR</title>
 </head>
 <body>
@@ -88,20 +88,25 @@
 
             <div id="consult-benefits-div-inputs">
                 <div>
-                    <input type="radio" name="consult-benefits" id="cpf">
+                    <input type="radio" name="consult-benefits" id="cpf" class="consult-inputs">
 
                     <label for="cpf">CPF</label>
                 </div>      
 
                 <div>
-                    <input type="radio" name="consult-benefits" id="nis">
+                    <input type="radio" name="consult-benefits" id="nis" class="consult-inputs">
                     <label for="nis">NIS</label>
                 </div>
             </div>
 
-            <input type="number">
+            <div id="div-consult-input">
+                <input type="text" id="consult-input-benefit" placeholder="Selecione o tipo de consulta">
 
-            <a href="#">Consultar</a>
+                <span id="consult-input-error"></span>
+            </div>
+            
+
+            <a href="#" id="consult-button">Consultar</a>
         </div>
     </section>
 

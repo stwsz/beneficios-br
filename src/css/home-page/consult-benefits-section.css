@@ -50,10 +50,22 @@
     cursor: pointer;
 }
 
-#consult-benefits-section #consult-benefits-div > input {
+#div-consult-input {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+#consult-input-benefit {
     border: 1px solid var(--blue-secondary-color);
     border-radius: 0.2rem;
     padding: 0.75rem 1rem;
+    -webkit-appearance: none;
+}
+
+#consult-input-error {
+    font-size: 0.8rem;
+    color: red;
 }
 
 #consult-benefits-section #consult-benefits-div a {
