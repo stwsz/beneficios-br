@@ -59,24 +59,52 @@ consultButton.addEventListener("click", (e) => {
 
     if (cpfInput) {
         if (cpfPattern.test(inputValue)) {
+            let cpfSum = 0;
+            let firstDigit;
+            let secondDigit;
+
+            for (let i = 0; i < 9; i++) {
+                cpfSum += Number(inputValue[i]) * (10 - i);
+            }
+
+            firstDigit = cpfSum % 11;
+
+            if (firstDigit < 2) {
+                firstDigit = 0;
+            } else {
+                firstDigit = 11 - firstDigit;
+            }
+
+            cpfSum = 0;
+
+            for (let i = 0; i < 10; i++) {
+                cpfSum += Number(inputValue[i]) * (11 - i);
+            }
+
+            secondDigit = cpfSum % 11;
+
+            if (secondDigit < 2) {
+                secondDigit = 0;
+            } else {
+                secondDigit = 11 - secondDigit;
+            }
             
+            console.log(firstDigit, secondDigit);
         } else {
             e.preventDefault();
             errorText.textContent = "CPF inválido";
             errorText.style.display = "block";
-            
-            return;
         }
     } else if (nisInput) {
         if (nisPattern.test(inputValue)) {
             const nisWeight = [3, 2, 9, 8, 7, 6, 5, 4, 3, 2];
-            let nisResult = 0;
+            let nisSum = 0;
         
             for (let i = 0; i < 10; i++) {
-                nisResult += Number(inputValue) * nisWeight[i];
+                nisSum += Number(inputValue) * nisWeight[i];
             }
         
-            const remainder = nisResult % 11;
+            const remainder = nisSum % 11;
             const checkDigit = remainder === 0 || remainder === 1 ? 0 : 11 - remainder;
         
             if (checkDigit !== Number(inputValue[10])) {
