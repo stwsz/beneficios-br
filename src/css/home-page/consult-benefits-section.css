@@ -5,6 +5,8 @@
     align-items: center;
     padding: 4rem 0rem;
     gap: 2.5rem;
+    width: 50%;
+    margin: 0 auto;
 }
 
 #consult-benefits-section h2 {
@@ -21,7 +23,7 @@
     flex-direction: column;
     gap: 1.5rem;
     padding: 2rem 4rem;
-    width: 50%;
+    width: 100%;
     border-radius: 0.5rem;
 }
 
@@ -68,7 +70,7 @@
     color: red;
 }
 
-#consult-benefits-section #consult-benefits-div a {
+#consult-button {
     margin: 0 auto;
     color: var(--basic-white-color);
     background-color: var(--blue-secondary-color);
@@ -76,5 +78,36 @@
     font-size: 0.8rem;
     padding: 0.8rem 6rem;
     border-radius: 0.4rem;
+    text-align: center;
 }
 
+/*Media queries - Responsivity*/
+@media screen and (max-width: 920px) {
+    #consult-benefits-section {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    #consult-benefits-section {
+        width: 85%;
+    }
+
+    #consult-input-benefit {
+        width: 100%;
+    }
+
+    #consult-button {
+        padding: 0.8rem 3rem;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    #consult-benefits-section #consult-benefits-div {
+        padding: 2rem 1rem;
+    }
+
+    #consult-input-benefit::placeholder {
+        font-size: 0.7rem;
+    }
+}

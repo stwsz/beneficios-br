@@ -33,14 +33,10 @@ const consultButton = document.getElementById('consult-button');
 const consultInputBenefit = document.getElementById('consult-input-benefit');
 const errorText = document.getElementById('consult-input-error');
 
-console.log(errorText);
-
 for (let i = 0; i < consultInputs.length; i++) {
     consultInputs[i].addEventListener('change', () => {
         if (i === 0) {
             consultInputBenefit.setAttribute('placeholder', 'Digite seu CPF');
-
-            console.log(errorText);
         }
 
         if (i === 1) {
@@ -67,13 +63,7 @@ consultButton.addEventListener("click", (e) => {
                 cpfSum += Number(inputValue[i]) * (10 - i);
             }
 
-            firstDigit = cpfSum % 11;
-
-            if (firstDigit < 2) {
-                firstDigit = 0;
-            } else {
-                firstDigit = 11 - firstDigit;
-            }
+            firstDigit = cpfSum % 11 < 2 ? 0 : 11 - (cpfSum % 11);
 
             cpfSum = 0;
 
@@ -81,15 +71,15 @@ consultButton.addEventListener("click", (e) => {
                 cpfSum += Number(inputValue[i]) * (11 - i);
             }
 
-            secondDigit = cpfSum % 11;
+            secondDigit = cpfSum % 11 < 2 ? 0 : 11 - (cpfSum % 11);
 
-            if (secondDigit < 2) {
-                secondDigit = 0;
+            if (firstDigit === Number(inputValue[9]) && secondDigit === Number(inputValue[10])) {
+                errorText.style.display = "none";
             } else {
-                secondDigit = 11 - secondDigit;
+                e.preventDefault();
+                errorText.textContent = "CPF inválido";
+                errorText.style.display = "block";
             }
-            
-            console.log(firstDigit, secondDigit);
         } else {
             e.preventDefault();
             errorText.textContent = "CPF inválido";
@@ -99,20 +89,20 @@ consultButton.addEventListener("click", (e) => {
         if (nisPattern.test(inputValue)) {
             const nisWeight = [3, 2, 9, 8, 7, 6, 5, 4, 3, 2];
             let nisSum = 0;
-        
+
             for (let i = 0; i < 10; i++) {
-                nisSum += Number(inputValue) * nisWeight[i];
+                nisSum += Number(inputValue[i]) * nisWeight[i];
             }
-        
+
             const remainder = nisSum % 11;
-            const checkDigit = remainder === 0 || remainder === 1 ? 0 : 11 - remainder;
-        
-            if (checkDigit !== Number(inputValue[10])) {
+            const checkDigit = remainder < 2 ? 0 : 11 - remainder;
+
+            if (checkDigit === Number(inputValue[10])) {
+                errorText.style.display = "none";
+            } else {
                 e.preventDefault();
                 errorText.textContent = "NIS inválido";
                 errorText.style.display = "block";
-            } else {
-                errorText.style.display = "none";
             }
         } else {
             e.preventDefault();
@@ -123,3 +113,8 @@ consultButton.addEventListener("click", (e) => {
         e.preventDefault();
     }
 });
+
+//Get the current year
+const date = document.getElementById('date');
+
+date.textContent = new Date().getFullYear();
