@@ -52,6 +52,7 @@
     display: flex;
     align-items: center;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 .carousel-items {
@@ -90,23 +91,18 @@
         height: 20px;
     }
     
+    #carousel-benefits h1 {
+        font-size: 0.9rem;
+        text-align: center;
+        padding: 0 0.7rem;
+    }
+
     #carousel {
-        width: 350px;
+        width: 220px;
     }
 
     .carousel-items {
-        width: 350px;
-        height: 200px;
-    }
-}
-
-@media screen and (max-width: 720px) {       
-    #carousel {
-        width: 280px;
-    }
-
-    .carousel-items {
-        width: 280px;
-        height: 150px;
+        width: 240px;
+        height: 130px;
     }
 }

@@ -123,26 +123,34 @@ date.textContent = new Date().getFullYear();
 const carousel = document.getElementById("carousel");
 const prevButton = document.querySelector("#carousel-benefits-div button:first-child");
 const nextButton = document.querySelector("#carousel-benefits-div button:last-child");
-const itemWidth = document.querySelector(".carousel-items").offsetWidth;
 
 let scrollPosition = 0;
 
+function getItemWidth() {
+    return document.querySelector("#carousel img").offsetWidth; 
+};
+
 nextButton.addEventListener("click", () => {
-    if (scrollPosition < carousel.scrollWidth - carousel.clientWidth) {
+    const itemWidth = getItemWidth();
+    if (scrollPosition + itemWidth < carousel.scrollWidth - carousel.clientWidth) {
         scrollPosition += itemWidth;
-        carousel.scrollTo({
-            left: scrollPosition,
-            behavior: "smooth"
-        });
+    } else {
+        scrollPosition = carousel.scrollWidth - carousel.clientWidth;
     }
+    carousel.scrollTo({ left: scrollPosition, behavior: "smooth" });
 });
 
 prevButton.addEventListener("click", () => {
-    if (scrollPosition > 0) {
+    const itemWidth = getItemWidth();
+    if (scrollPosition - itemWidth > 0) {
         scrollPosition -= itemWidth;
-        carousel.scrollTo({
-            left: scrollPosition,
-            behavior: "smooth"
-        });
+    } else {
+        scrollPosition = 0;
     }
+    carousel.scrollTo({ left: scrollPosition, behavior: "smooth" });
+});
+
+window.addEventListener("resize", () => {
+    scrollPosition = 0;
+    carousel.scrollTo({ left: 0, behavior: "smooth" });
 });
