@@ -118,3 +118,31 @@ consultButton.addEventListener("click", (e) => {
 const date = document.getElementById('date');
 
 date.textContent = new Date().getFullYear();
+
+//Logic of carousel
+const carousel = document.getElementById("carousel");
+const prevButton = document.querySelector("#carousel-benefits-div button:first-child");
+const nextButton = document.querySelector("#carousel-benefits-div button:last-child");
+const itemWidth = document.querySelector(".carousel-items").offsetWidth;
+
+let scrollPosition = 0;
+
+nextButton.addEventListener("click", () => {
+    if (scrollPosition < carousel.scrollWidth - carousel.clientWidth) {
+        scrollPosition += itemWidth;
+        carousel.scrollTo({
+            left: scrollPosition,
+            behavior: "smooth"
+        });
+    }
+});
+
+prevButton.addEventListener("click", () => {
+    if (scrollPosition > 0) {
+        scrollPosition -= itemWidth;
+        carousel.scrollTo({
+            left: scrollPosition,
+            behavior: "smooth"
+        });
+    }
+});
