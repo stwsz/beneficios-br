@@ -12,6 +12,7 @@
 
 #header-principal-div {
     display: flex;
+    background-color: var(--basic-white-color);
 }
 
 .header-align-flex {

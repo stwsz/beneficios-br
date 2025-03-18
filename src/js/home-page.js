@@ -19,6 +19,7 @@ adjustMenu();
 buttonMenuMobile.addEventListener('click', () => {
     if (window.innerWidth <= 860) { 
         menuOpen = !menuOpen;
+        
         divHeader.style.display = menuOpen ? 'flex' : 'none';
     }
 });
